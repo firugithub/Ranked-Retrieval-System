@@ -1,0 +1,193 @@
+﻿Name: Vishal Mittal
+Student ID: 2017A7PS0080P
+BITS Email: f20170080@pilani.bits-pilani.ac.in
+Wikipedia file used: AB/wiki_02
+
+Answer 1: 
+
+a) 85793
+b) The distribution plot is available in 'Image_1: Unigram Analysis.png
+c) 14615
+
+Answer 2:
+a) 652226
+b) The distribution plot is available in 'Image_2: Bigram Analysis.png
+c) 383382
+
+Answer 3:
+a) 1123895
+b) The distribution plot is available in 'Image_3: Trigram Analysys.png'
+c) 720629
+
+
+
+
+Answer 4:
+
+a) Unigram analysis after stemming
+  i) 57563
+  ii) The distribution plot is available in 'Image_4: Unigram Analysys after Stemming.png'
+  iii) 5924
+
+b) Bigram analysis after stemming
+  i) 566010
+  ii) The distribution plot is available in 'Image_5: Bigram Analysys after Stemming.png'
+  iii) 297166
+
+c) Trigram analysis after stemming
+  i) 1089991
+  ii) The distribution plot is available in 'Image_6: Trigram Analysys after Stemming.png'
+  iii) 686725
+
+
+
+
+Answer 5:
+
+a) Unigram analysis after lemmatization
+  i) 80590
+  ii) The distribution plot is available in 'Image_7: Unigram Analysys after Lemmatization.png'
+  iii) 12262
+
+b) Bigram analysis after lemmatization
+  i) 629015
+  ii) The distribution plot is available in 'Image_8: Bigram Analysys after Lemmatization.png'
+  iii) 360171
+
+c) Trigram analysis after lemmatization
+  i) 1115571
+  ii) The distribution plot is available in 'Image_9: Trigram Analysys after Lemmatization.png'
+  iii) 712305
+
+
+
+
+Answer 6:
+[Your brief summarization of the above result and how they are related to the zipf's law.]
+
+Zipf's law states that the frequency of a token in a text is directly proportional to its rank or position in the sorted list.
+This law describes how tokens are distributed in languages: some tokens occur very frequently, some occur with intermediate
+frequency, and some tokens rarely occur.
+
+In the above Images 1-9, graphs of rank versus the frequency of words were plotted and it is clear that the Zipf's law holds since
+there is proportional relation between rank and the frequency of the words.
+
+"Term frequency is inversely proportional to rank"
+
+        cfi ∝ 1/i  
+
+    where i is the rank.
+
+Hence, log cfi = log c + k*log i where k = −1 and c is a constant. 
+
+In all the plots 1-9, we get the curve somewhat close to a straight line with a slope of -1 since log scale has been used to plot 
+the curves.
+
+
+
+
+Answer 7:
+[Examples where you observe that tokenization is not correct and why it is not correct?
+Note: It is possible to include any unicode character in .txt files: cliché, ω, 😀.]
+
+Some examples: U+1F604 = 😄, "vis-à-vis",  "coup de grâce", "naïve"
+
+However, in NLTK, while using UTF-8, I did not face any problem in tokenization.
+
+There were many foreign words in the corpus which were making it difficult to plot graph.
+
+So I removed all such characters in very early phase only by reading the file in utf-8 mode and keeping only ascii characters i.e
+the first 128 characters of unicode-8.
+
+
+
+
+
+Answer 8:
+
+NLTK - Natural Language Toolkit Library for Python
+
+
+Tokenization:
+
+Tokenization is a way to split text into tokens. These tokens could be paragraphs, sentences, or individual words. NLTK provides a number 
+of tokenizers in the tokenize module.
+
+The text is first tokenized into sentences using the PunktSentenceTokenizer. Then each sentence is tokenized into words using 4 different 
+word tokenizers:
+
+1. TreebankWordTokenizer
+2. WordPunctTokenizer
+3. PunctWordTokenizer
+4. WhitespaceTokenizer
+
+The pattern tokenizer does its own sentence and word tokenization, and is included to show how this library tokenizes text before further 
+parsing.
+
+
+The Porter Stemming Algorithm:
+
+The Porter stemming algorithm is a process for removing the commoner morphological and inflexional endings from words in English. 
+Its main use is as part of a term normalisation process that is usually done when setting up Information Retrieval systems.
+
+It works by POS tagging and removing unnecessary consonants.
+
+Lemmatization:
+
+Lemmatization takes into consideration morphological analysis of the words. It returns the lemma which is the base form of all its 
+inflectional forms. In-depth linguistic knowledge is required to create dictionaries and look for the proper form of the word.
+
+It uses the underlying 'wordnet' dictionary of NLTK and the POS tag.
+References:
+
+- https://text-processing.com/demo/tokenize/
+- https://tartarus.org/martin/PorterStemmer/def.txt
+- https://stackoverflow.com/questions/25534214/nltk-wordnet-lemmatizer-shouldnt-it-lemmatize-all-inflections-of-a-word
+
+
+
+
+
+
+Answer 9:
+
+Some examples:
+
+2.10%   ->  '2.10', '%'
+$1, 50¢  ->  '$', '1', ',', '50¢',
+24-07-2020  ->  '24-07-2020'
+14/07/1991' -> 14/07/1991
+₹ 15,000  ->  '₹', '15,000'
+
+Dates are tokenized as a whole.
+
+
+
+
+
+Answer 10:
+
+The top 20 bi-grams obtained using the Chi-square test are:
+
+('Kak', 'Tiliw')
+('Orbis', 'Tertius')
+('Buenos', 'Aires')
+('Honky', 'Tonk')
+('Sok', 'Kwu')
+('Durutti', 'Column')
+('Shropshire', 'Lad')
+('Forgotten', 'Realms')
+('Gullivers', 'Travels')
+('shim', 'sham')
+('Chaan', 'Muwan')
+('sillon', 'industriel')
+('Marlon', 'Brando')
+('Comfortably', 'Numb')
+('bossa', 'nova')
+('Bachianas', 'Brasileiras')
+('foie', 'gras')
+('Abandoned', 'Luncheonette')
+('Rotten', 'Tomatoes')
+('Uaxaclajuun', 'Ubaah')
+
+[Note: Code for Collocations using Chi-square test is in .py file]
